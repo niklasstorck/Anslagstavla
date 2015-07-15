@@ -19,7 +19,7 @@
 // Fillåsning på textfilen med Time out.
 // Detta är en test som har vissa risker.
 
-// 1.9.0 Omkompilering bga problemet med felmedelande vid nätverksproblem.
+// 1.9.0 Omkompilering pga problemet med felmedelande vid nätverksproblem.
 //
 // ***************************************************************************
 // Niklas Storck
@@ -125,22 +125,14 @@ begin
 end;
 
 function TStartForm.GetNewDate(FNL:String):TDateTime;
-var FH : Integer; // File handle
-    F : File;
+var DT: TDateTime;
 begin
   try
-    //FH:=FileOpen(F,fmOpenRead); // OBS Fileopen är Ms Windows API på lågnivå.
-                                // har dock fungerat bra. Niklas
-
-    //GetNewDate:=FileDateToDateTime(FileGetDate(FH));
-    Assignfile(F,FNL);
-    Reset(F);
-    GetNewDate:=FileDateToDateTime(FileAge(FN));
-    CloseFile(F)
-    //FileClose(FH);
+    FileAge(FNL,DT);
+    GetNewDate:=DT;
   except
     GetNewdate:=0;
-    Fel(FN,'136');
+    Fel(FNL,'136');
   end
 end;
 
@@ -160,7 +152,7 @@ begin
     Ini.Free
   except
     Application.messagebox(
-    'Operativsystemet tillåter inte Anslagstavlan att spara fönstrets position. ',
+    'Systeminställningarna tillåter inte Anslagstavlan att spara fönstrets position. ',
         'OBS! Info.ini är låst!',
         MB_OK)
   end;
@@ -283,8 +275,9 @@ begin
   // ***************************************************************************
   // Läs in filen FN och initiera FDATE med filens datumstämpel
   // ***************************************************************************
-  if (fileexists(FN)) then
+  if fileExists(FN) then
    begin
+
     try
       FileOK:=TRUE;
       Memo1.Lines.LoadFromFile(FN);
@@ -292,11 +285,13 @@ begin
     except
       Fel(FN,'286' )
     end;
+
     if FDate > 0 then
       Label1.Caption:=FormatDateTime('"Ändrad senast" dddd "den" d mmmm yyyy, ' +
         '"kl." hh:mm', FDate)
     else
       Label1.Caption:='Fel på filens datum';
+
    end
   else
    begin

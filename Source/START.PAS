@@ -165,6 +165,7 @@ var
 begin
   // ***************************************************************************
   // Läs inställningar i den lokala inifilen.
+  // Grundinställningar om det inte finns data första starten
   // ***************************************************************************
   Ini       := TRegIniFile.Create('Anslagstavlan');
 
@@ -183,6 +184,8 @@ begin
 
   // ***************************************************************************
   // Och läs in data från GLOBAL.INI på detta bibliotek
+  // Global.ini är inte en inifil som programmet gör utan en fil för gemensamma
+  // inställningar
   // ***************************************************************************
   IniF       := TIniFile.Create( PathEXE+'global.ini');
 
