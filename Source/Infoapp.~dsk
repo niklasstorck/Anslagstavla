@@ -3,33 +3,29 @@ File_0=TSourceModule,'F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstav
 File_1=TSourceModule,'c:\program files (x86)\codegear\rad studio\6.0\SOURCE\WIN32\VCL\Forms.pas',0,1,6521,1,6539,0,0,,
 
 [Modules]
-Module0=F:\Onedrive\Pogrammering\Anslagstavla\1.9_2 - kopia\START.PAS
-Module1=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\START.PAS
-Module2=F:\Onedrive\Pogrammering\Anslagstavla\1.9_2 - kopia\Infoapp.vrc
-Module3=default.htm
-Module4=C:\Bat\Netstart.bat
-Module5=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\Info.txt
-Module6=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9_2 - kopia\Global.pas
-Module7=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\ABOUT.PAS
-Module8=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\Global.pas
-Count=9
+Module0=U:\GIT\Anslagstavla\Source\START.PAS
+Module1=default.htm
+Module2=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\START.PAS
+Module3=C:\Bat\Netstart.bat
+Module4=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\Info.txt
+Module5=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9_2 - kopia\Global.pas
+Module6=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\ABOUT.PAS
+Module7=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\Global.pas
+Count=8
 EditWindowCount=1
 
-[F:\Onedrive\Pogrammering\Anslagstavla\1.9_2 - kopia\START.PAS]
+[U:\GIT\Anslagstavla\Source\START.PAS]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
+
+[default.htm]
+ModuleType=TURLModule
 
 [F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\START.PAS]
 ModuleType=TSourceModule
 FormState=1
 FormOnTop=0
-
-[F:\Onedrive\Pogrammering\Anslagstavla\1.9_2 - kopia\Infoapp.vrc]
-ModuleType=TSourceModule
-
-[default.htm]
-ModuleType=TURLModule
 
 [C:\Bat\Netstart.bat]
 ModuleType=TSourceModule
@@ -53,8 +49,8 @@ FormState=0
 FormOnTop=0
 
 [EditWindow0]
-ViewCount=9
-CurrentEditView=F:\Onedrive\Pogrammering\Anslagstavla\1.9_2 - kopia\START.PAS
+ViewCount=8
+CurrentEditView=U:\GIT\Anslagstavla\Source\START.PAS
 View0=0
 View1=1
 View2=2
@@ -63,7 +59,6 @@ View4=4
 View5=5
 View6=6
 View7=7
-View8=8
 PercentageSizes=1
 Create=1
 Visible=1
@@ -82,13 +77,13 @@ BorlandEditorCodeExplorer=BorlandEditorCodeExplorer@EditWindow0
 TopPanelSize=0
 LeftPanelSize=1895
 LeftPanelClients=PropertyInspector,DockSite3
-LeftPanelData=00000800010100000000D11000000000000001670700000000000001000000005A0E000009000000446F636B53697465330100000000E51D00001100000050726F7065727479496E73706563746F72FFFFFFFF
+LeftPanelData=00000800010100000000301400000000000001670700000000000001000000005A0E000009000000446F636B53697465330100000000E42300001100000050726F7065727479496E73706563746F72FFFFFFFF
 RightPanelSize=2000
 RightPanelClients=DockSite2
-RightPanelData=00000800010100000000D11000000000000001D0070000000000000100000000E51D000009000000446F636B5369746532FFFFFFFF
-BottomPanelSize=1493
+RightPanelData=00000800010100000000301400000000000001D0070000000000000100000000E423000009000000446F636B5369746532FFFFFFFF
+BottomPanelSize=0
 BottomPanelClients=DockSite1,MessageView
-BottomPanelData=0000080001020100000009000000446F636B5369746531724500000000000002D5050000000000000100000000724500000F0000004D65737361676556696577466F726DFFFFFFFF
+BottomPanelData=0000080001020200000009000000446F636B53697465310F0000004D65737361676556696577466F726D1534000000000000022106000000000000FFFFFFFF
 BottomMiddlePanelSize=0
 BottomMiddlePanelClients=DockSite0,GraphDrawingModel
 BottomMiddelPanelData=0000080001020200000009000000446F636B536974653010000000477261706844726177696E6756696577981D00000000000002F206000000000000FFFFFFFF
@@ -99,6 +94,17 @@ WelcomePageURL=bds:/default.htm
 
 [View1]
 CustomEditViewType=TEditView
+Module=U:\GIT\Anslagstavla\Source\START.PAS
+CursorX=20
+CursorY=188
+TopLine=142
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=U:\GIT\Anslagstavla\Source\START.PAS
+
+[View2]
+CustomEditViewType=TEditView
 Module=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\START.PAS
 CursorX=81
 CursorY=198
@@ -108,29 +114,7 @@ Elisions=
 Bookmarks=
 EditViewName=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\START.PAS
 
-[View2]
-CustomEditViewType=TEditView
-Module=F:\Onedrive\Pogrammering\Anslagstavla\1.9_2 - kopia\START.PAS
-CursorX=113
-CursorY=99
-TopLine=85
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=F:\Onedrive\Pogrammering\Anslagstavla\1.9_2 - kopia\START.PAS
-
 [View3]
-CustomEditViewType=TEditView
-Module=F:\Onedrive\Pogrammering\Anslagstavla\1.9_2 - kopia\Infoapp.vrc
-CursorX=1
-CursorY=60
-TopLine=30
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=F:\Onedrive\Pogrammering\Anslagstavla\1.9_2 - kopia\Infoapp.vrc
-
-[View4]
 CustomEditViewType=TEditView
 Module=C:\Bat\Netstart.bat
 CursorX=40
@@ -141,7 +125,7 @@ Elisions=
 Bookmarks=
 EditViewName=C:\Bat\Netstart.bat
 
-[View5]
+[View4]
 CustomEditViewType=TEditView
 Module=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\Info.txt
 CursorX=14
@@ -152,7 +136,7 @@ Elisions=
 Bookmarks=
 EditViewName=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\Info.txt
 
-[View6]
+[View5]
 CustomEditViewType=TEditView
 Module=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9_2 - kopia\Global.pas
 CursorX=1
@@ -163,7 +147,7 @@ Elisions=
 Bookmarks=
 EditViewName=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9_2 - kopia\Global.pas
 
-[View7]
+[View6]
 CustomEditViewType=TEditView
 Module=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\ABOUT.PAS
 CursorX=28
@@ -174,7 +158,7 @@ Elisions=
 Bookmarks=
 EditViewName=Borland.FormDesignerView
 
-[View8]
+[View7]
 CustomEditViewType=TEditView
 Module=F:\Mina dokument\Niklas\_Viktigare filer\Source\Anslagstavla\1.9\Global.pas
 CursorX=21
@@ -200,11 +184,11 @@ State=0
 Left=0
 Top=0
 Width=3824
-Height=1193
+Height=1243
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3824
-ClientHeight=1193
+ClientHeight=1243
 TBDockHeight=214
 LRDockWidth=13602
 Dockable=1
@@ -257,11 +241,11 @@ State=0
 Left=0
 Top=0
 Width=2000
-Height=7529
+Height=9107
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=7529
+ClientHeight=9107
 TBDockHeight=5900
 LRDockWidth=2352
 Dockable=1
@@ -270,18 +254,18 @@ StayOnTop=0
 [MessageView]
 PercentageSizes=1
 Create=1
-Visible=1
+Visible=0
 Docked=1
 State=0
 Left=0
-Top=23
-Width=10000
-Height=1371
+Top=0
+Width=2770
+Height=1421
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=10000
-ClientHeight=1371
-TBDockHeight=1371
+ClientWidth=2770
+ClientHeight=1421
+TBDockHeight=1421
 LRDockWidth=2770
 Dockable=1
 StayOnTop=0
@@ -314,16 +298,21 @@ State=0
 Left=0
 Top=552
 Width=1895
-Height=3929
+Height=5507
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=1895
-ClientHeight=3929
-TBDockHeight=7271
+ClientHeight=5507
+TBDockHeight=9271
 LRDockWidth=1895
 Dockable=1
 StayOnTop=0
 SplitPos=111
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Action,
+ExpandedItems=Anchors=0,BorderIcons=0,Constraints=0,Font=0,GlassFrame=0,HorzScrollBar=0
 
 [ModelViewTool]
 PercentageSizes=1
@@ -334,11 +323,11 @@ State=0
 Left=0
 Top=0
 Width=2000
-Height=7093
+Height=9093
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=7093
+ClientHeight=9093
 TBDockHeight=4879
 LRDockWidth=5305
 Dockable=1
@@ -351,7 +340,7 @@ Visible=0
 Docked=1
 State=0
 Left=-242
-Top=-100
+Top=-102
 Width=1844
 Height=3143
 MaxLeft=-1
@@ -407,8 +396,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=-1891
-Top=18
+Left=-2048
+Top=-102
 Width=2844
 Height=6207
 MaxLeft=-1
@@ -427,7 +416,7 @@ Visible=0
 Docked=1
 State=0
 Left=-8
-Top=466
+Top=-31
 Width=273
 Height=357
 MaxLeft=-1
@@ -451,11 +440,11 @@ State=0
 Left=0
 Top=0
 Width=3824
-Height=1193
+Height=1243
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3824
-ClientHeight=1193
+ClientHeight=1243
 TBDockHeight=407
 LRDockWidth=4949
 Dockable=1
@@ -470,11 +459,11 @@ State=0
 Left=0
 Top=0
 Width=3824
-Height=1193
+Height=1243
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3824
-ClientHeight=1193
+ClientHeight=1243
 TBDockHeight=214
 LRDockWidth=7406
 Dockable=1
@@ -493,11 +482,11 @@ State=0
 Left=0
 Top=0
 Width=3824
-Height=1193
+Height=1243
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3824
-ClientHeight=1193
+ClientHeight=1243
 TBDockHeight=1536
 LRDockWidth=3480
 Dockable=1
@@ -512,11 +501,11 @@ State=0
 Left=0
 Top=0
 Width=3824
-Height=1193
+Height=1243
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3824
-ClientHeight=1193
+ClientHeight=1243
 TBDockHeight=2057
 LRDockWidth=3480
 Dockable=1
@@ -531,11 +520,11 @@ State=0
 Left=0
 Top=0
 Width=2340
-Height=1057
+Height=1300
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2340
-ClientHeight=1057
+ClientHeight=1300
 TBDockHeight=2314
 LRDockWidth=2824
 Dockable=1
@@ -596,11 +585,11 @@ State=0
 Left=0
 Top=0
 Width=2000
-Height=7093
+Height=9107
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=7093
+ClientHeight=9107
 TBDockHeight=4879
 LRDockWidth=7148
 Dockable=1
@@ -612,8 +601,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=491
-Top=1118
+Left=0
+Top=0
 Width=2859
 Height=3214
 MaxLeft=-1
@@ -634,11 +623,11 @@ State=0
 Left=0
 Top=0
 Width=3824
-Height=1193
+Height=1243
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3824
-ClientHeight=1193
+ClientHeight=1243
 TBDockHeight=1550
 LRDockWidth=8742
 Dockable=1
@@ -744,14 +733,14 @@ Visible=0
 Docked=1
 State=0
 Left=0
-Top=23
+Top=0
 Width=3824
-Height=1371
+Height=1421
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=3824
-ClientHeight=1371
-TBDockHeight=1371
+ClientHeight=1421
+TBDockHeight=1421
 LRDockWidth=3824
 Dockable=1
 StayOnTop=0
@@ -770,11 +759,11 @@ State=0
 Left=0
 Top=23
 Width=2000
-Height=7707
+Height=9286
 MaxLeft=-1
 MaxTop=-1
 ClientWidth=2000
-ClientHeight=7707
+ClientHeight=9286
 TBDockHeight=9271
 LRDockWidth=2000
 Dockable=1
@@ -799,7 +788,7 @@ MaxLeft=-1
 MaxTop=-1
 ClientWidth=1895
 ClientHeight=3586
-TBDockHeight=7271
+TBDockHeight=9271
 LRDockWidth=1895
 Dockable=1
 StayOnTop=0

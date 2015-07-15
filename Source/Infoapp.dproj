@@ -100,7 +100,7 @@
         <DCCReference Include="ABOUT.PAS">
             <Form>AboutBox</Form>
         </DCCReference>
-        <DCCReference Include="CHTXT.pas">
+        <DCCReference Include="CHTXT.PAS">
             <Form>ChngForm</Form>
         </DCCReference>
         <None Include="Infoapp.todo"/>
