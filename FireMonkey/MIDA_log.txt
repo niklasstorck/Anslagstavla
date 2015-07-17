@@ -1,0 +1,65 @@
+Mida - Convert VCL Application To FireMonkey for Delphi Embarcadero XE2/XE3/XE4/XE5/XE6 and C++Builder XE2/XE3/XE4/XE5/XE6/XE7
+Official Site http://www.midaconverter.com
+Mida version : 277
+----------------------------------------------------------------------------------------------------------------------------------------------
+This is a Basic version of Mida ( LiveBindinds - StyleBook - Image - Source Update, Custom components... are not supported )
+
+The Third Party Components ( TMS - JVCL - DevExpress... ) are not supported in this version of Mida.
+Opening from Embarcadero IDE a converted project, with components like TMS,JVCL,personal ... IDE will indicate an error of Class not known.
+
+This is not an error of Mida.
+
+Upgrade your licence to Mida Pro or Studio to obtain a greater number of components supported.
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Converting...
+
+CONVERSION MODE: VCL TO FIREMONKEY
+IDE OUTPUT: XE7
+CUSTOM CONVERSION: NOT ACTIVE
+
+DFM :
+Converting : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\START.dfm
+Binary DFM found : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\START.fmx
+     Component not supported on FireMonkey :   object TrayIcon1: TTrayIcon
+     
+Converting : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\CHTXT.dfm
+Binary DFM found : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\CHTXT.fmx
+     
+Converting : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\ABOUT.dfm
+Binary DFM found : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\ABOUT.fmx
+     
+PAS LIBRARY :
+Converting : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\Global.pas
+     
+Converting : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\START[1].PAS
+     
+DPR :
+CPP :
+H :
+cbProj :
+Others :
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\.gitattributes
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\.gitignore
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Anslagstavlan_projgroup.groupproj
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\blue.ico
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Global.ini
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Global[1].ini
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Info.txt
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Infoapp.~dsk
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Infoapp.bdsproj
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Infoapp.dsk
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Infoapp.exe
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Infoapp.res
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Infoapp.todo
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Infoapp.zip
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Infoapp[1].exe
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Infoapp[1].res
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Infoapp_Icon.ico
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\Main1.ico
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\ProjectGroup1.dsk
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\ProjectGroup1.groupproj
+copy extra file : \\sgsth-srv-fs01\hemkataloger$\nstorck\Documents\GitHub\Anslagstavla\FireMonkey\SMALL.ICO
+
+Operation Complete
+Time convertion project : 4,77 seconds.

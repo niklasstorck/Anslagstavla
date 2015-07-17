@@ -1,0 +1,58 @@
+object ChngForm: TChngForm
+  Left = 465
+  Top = 312
+  Caption = #196'ndra'
+  ClientHeight = 508
+  ClientWidth = 602
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnActivate = FormActivate
+  Left = 465
+  Top = 312
+  DesignerMasterStyle = 0
+  object BitBtn1: TButton
+    Position.X = 429.000000000000000000
+    Position.Y = 474.000000000000000000
+    Size.Width = 77.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    TextSettings.WordWrap = True
+    OnClick = BitBtn1Click
+  end
+  object BitBtn2: TButton
+    Position.X = 511.000000000000000000
+    Position.Y = 474.000000000000000000
+    Size.Width = 77.000000000000000000
+    Size.Height = 27.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    TextSettings.WordWrap = True
+  end
+  object ButtonDate: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 474.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'L'#228'gg till dagens datum'
+    OnClick = ButtonDateClick
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    Align = Top
+    Size.Width = 602.000000000000000000
+    Size.Height = 465.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Lines.Strings = (
+      'Memo1')
+  end
+  object Timer1: TTimer
+    Left = 208
+    Top = 472
+  end
+end

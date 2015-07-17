@@ -1,0 +1,94 @@
+object StartForm: TStartForm
+  Left = 1137
+  Top = 591
+  BorderIcons = []
+  Caption = 'Anslagstavla'
+  ClientHeight = 401
+  ClientWidth = 471
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  OnCreate = FormActivate
+  OnClose = FormClose
+  OnResize = FormResize
+  Left = 1137
+  Top = 591
+  DesignerMasterStyle = 0
+  object Label1: TLabel
+    AutoSize = True
+    Position.X = 4.000000000000000000
+    Position.Y = 320.000000000000000000
+    Size.Width = 29.000000000000000000
+    Size.Height = 16.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Style = [fsBold]
+    TextSettings.WordWrap = False
+    Text = '_____'
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    Align = Top
+    Cursor = crArrow
+    DragMode = dmAutomatic
+    PopupMenu = PopupMenu1
+    Size.Width = 471.000000000000000000
+    Size.Height = 273.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Lines.Strings = (
+      'Memo1')
+    ReadOnly = True
+  end
+  object ButtonKrymp: TButton
+    Cancel = True
+    Default = True
+    Position.X = 272.000000000000000000
+    Position.Y = 304.000000000000000000
+    Size.Width = 65.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'G'#246'm'
+    OnClick = ButtonKrympClick
+  end
+  object Timer1: TTimer
+    Interval = 30000
+    OnTimer = Timer1Timer
+    Left = 200
+    Top = 16
+  end
+  object SaveDialog1: TSaveDialog
+    Left = 200
+    Top = 56
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 200
+    Top = 112
+    object ndraMedelande1: TMenuItem
+      Text = #196'ndra Meddelande...'
+      OnClick = ndraMedelande1Click
+    end
+    object N1: TMenuItem
+      Text = '-'
+    end
+    object Avsluta1: TMenuItem
+      Text = 'Avsluta'
+      OnClick = Avsluta1Click
+    end
+    object SPoppUpp1: TMenuItem
+      IsChecked = True
+      Text = 'St'#228'ng av PopUpp'
+      OnClick = SPoppUpp1Click
+    end
+    object Om1: TMenuItem
+      Text = 'Om anslagstavlan...'
+      OnClick = Om1Click
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Textfiler|*.txt'
+    Title = 'V'#228'lj fil'
+    Left = 200
+    Top = 160
+  end
+end
