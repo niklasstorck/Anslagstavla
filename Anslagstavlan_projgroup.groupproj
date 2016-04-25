@@ -1,39 +1,36 @@
-﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-		<PropertyGroup>
-			<ProjectGuid>{288E34BB-752A-4932-A79B-3C90B5E9C1FF}</ProjectGuid>
-		</PropertyGroup>
-		<ItemGroup>
-			<Projects Include="Infoapp.dproj">
-				<Dependencies/>
-			</Projects>
-			<Projects Include="..\1.9\Infoapp.dproj">
-				<Dependencies/>
-			</Projects>
-		</ItemGroup>
-		<ProjectExtensions>
-			<Borland.Personality>Default.Personality.12</Borland.Personality>
-			<Borland.ProjectType/>
-			<BorlandProject>
-				<Default.Personality/>
-			</BorlandProject>
-		</ProjectExtensions>
-		<Target Name="Infoapp">
-			<MSBuild Projects="..\1.9\Infoapp.dproj"/>
-		</Target>
-		<Target Name="Infoapp:Clean">
-			<MSBuild Targets="Clean" Projects="..\1.9\Infoapp.dproj"/>
-		</Target>
-		<Target Name="Infoapp:Make">
-			<MSBuild Targets="Make" Projects="..\1.9\Infoapp.dproj"/>
-		</Target>
-		<Target Name="Build">
-			<CallTarget Targets="Infoapp;Infoapp"/>
-		</Target>
-		<Target Name="Clean">
-			<CallTarget Targets="Infoapp:Clean;Infoapp:Clean"/>
-		</Target>
-		<Target Name="Make">
-			<CallTarget Targets="Infoapp:Make;Infoapp:Make"/>
-		</Target>
-		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
-	</Project>
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{288E34BB-752A-4932-A79B-3C90B5E9C1FF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Infoapp.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Infoapp">
+        <MSBuild Projects="Infoapp.dproj"/>
+    </Target>
+    <Target Name="Infoapp:Clean">
+        <MSBuild Projects="Infoapp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Infoapp:Make">
+        <MSBuild Projects="Infoapp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Infoapp"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Infoapp:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Infoapp:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

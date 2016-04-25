@@ -23,7 +23,7 @@
 //
 // ***************************************************************************
 // Niklas Storck
-// Hb Storckholmen 1994 - 2002
+// Hb Storckholmen 1994 - 2016
 // ***************************************************************************
 
 unit Start;
@@ -219,10 +219,12 @@ begin
   // ***************************************************************************
   // Lite säkerhetsrutiner så att inte bilden hamnar utanför skärmen
   // ***************************************************************************
+  (*
   if left < 0 then left:= 1;
   if top < 0 then top:=1;
   if width + left > Screen.Width then left:=Screen.Width-width;
   if height + top > Screen.height then top:=Screen.height-height;
+  *)
 end;
 
 
