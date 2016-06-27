@@ -1,0 +1,11 @@
+[SystemConfiguration]
+Caption=Niklas test
+UppdatSek=90
+Infofilename=F:\Mina dokument\Niklas\GitHub\Anslagstavla\info.txt
+MemoColor=6060097
+MemoFontName=Arial
+MemoFontColor=8454143
+MemoFontSize=10
+MemoFontKursiv=Nej
+MemoFontFet=Nej
+PopupAllowed=FALSE

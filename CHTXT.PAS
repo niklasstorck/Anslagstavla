@@ -29,8 +29,7 @@ type
     //procedure StoTime(S:String; var T : TDateTime);
 
     private
-    EditStart,
-    EditTime : TDateTime;
+    EditStart: TDateTime;
 
     public
     TextColor,

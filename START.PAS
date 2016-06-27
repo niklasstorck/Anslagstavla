@@ -31,6 +31,7 @@ unit Start;
 interface
 
 uses
+  System.UITypes,
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, Menus, ExtCtrls, StdCtrls,
   registry,inifiles ,about, ChTxt, Grids;
@@ -76,6 +77,7 @@ type
     UppdatSek : Integer;    // Antal sekunde mellan uppdatering av info
     PathEXE   : String;     // Path to exefile.
     MemoColor : TColor;     // Färg på memobakgrund
+    PopupTvingad: Boolean;
     function  FS(fn:String):Longint;
     Procedure Fel(FN, S:String); // generell flehanterare;
     procedure WriteSetup;
@@ -189,13 +191,14 @@ begin
   // ***************************************************************************
   IniF       := TIniFile.Create( PathEXE+'global.ini');
 
-  UppdatSek := IniF.ReadInteger( 'SystemConfiguration', 'UppdatSek',UppdatSek);
+  UppdatSek  := IniF.ReadInteger( 'SystemConfiguration', 'UppdatSek',UppdatSek);
   if UppDatSek < 10 then UppDatSek:=10; // Minsta uppdateringsintervall
-  FN        := IniF.ReadString(  'SystemConfiguration', 'Infofilename', PathEXE+'info.txt');
-  Caption   := IniF.ReadString(  'SystemConfiguration', 'Caption', 'Kan inte läsa Global.ini!');
-
-  MemoColor := IniF.ReadInteger( 'SystemConfiguration', 'MemoColor',clNavy);
+  FN         := IniF.ReadString(  'SystemConfiguration', 'Infofilename', PathEXE+'info.txt');
+  Caption    := IniF.ReadString(  'SystemConfiguration', 'Caption', 'Kan inte läsa Global.ini!');
+  PopUpTvingad:= IniF.ReadBool( 'SystemConfiguration', 'PopupTvingad', TRUE);
+  MemoColor  := IniF.ReadInteger( 'SystemConfiguration', 'MemoColor',clNavy);
   memo1.Color:=MemoColor;
+
   Memo1.Font.Name  := IniF.ReadString(  'SystemConfiguration', 'MemoFontName', 'Arial');
   Memo1.Font.Color := IniF.ReadInteger( 'SystemConfiguration', 'MemoFontColor',clWhite);
   Memo1.Font.Size  := IniF.ReadInteger( 'SystemConfiguration', 'MemoFontSize', 10);
@@ -268,6 +271,17 @@ begin
   Timer1.Interval:=UppdatSek*1000; // Sekunder --> millisekunder
   FDate:=0;
 
+  if PopupTvingad then
+  begin
+    PopUpMenu1.Items[3].Visible:=False;
+    PopUpMenu1.Items[3].Enabled:= False;
+    if SPoppUpp1.Checked = true then
+       SPoppUpp1.Checked:= False
+  end
+  else
+  begin
+    PopUpMenu1.Items[3].Enabled:=TRUE
+  end;
   // ***************************************************************************
   // Om programmet startar med en parameter läser programmet in
   // den filen i stället
@@ -374,6 +388,13 @@ begin
          //if Memo1.Lines[0]='OBS!'
          //then  Memo1.Color:=clRed
          //else Memo1.Color:=clNavy;
+          if Memo1.Lines[0]='OBS!' then
+          begin
+            Memo1.Color:=clRed
+          end  else
+          begin
+            Memo1.Color:=MemoColor
+          end;
 
 
          Onscreen;
