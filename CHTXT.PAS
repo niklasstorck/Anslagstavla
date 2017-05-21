@@ -9,15 +9,16 @@ interface
 
 uses
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
-  StdCtrls, ExtCtrls, Forms, TabNotBk, Buttons, Menus, Dialogs, ComCtrls;
+  StdCtrls, ExtCtrls, Forms, TabNotBk, Buttons, Menus, Dialogs, ComCtrls,
+  AdvMemo;
 
 type
   TChngForm = class(TForm)
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     ButtonDate: TButton;
-    Memo1: TMemo;
     Timer1: TTimer;
+    ChMemo: TAdvMemo;
     procedure FormActivate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure Cut1Click(Sender: TObject);
@@ -53,8 +54,8 @@ begin
   if CheckAvail(FN) = true then
     begin
     EditStart:=Now;
-    Memo1.Modified:=FALSE;
-    Memo1.Lines.LoadfromFile(FN)
+    ChMemo.Modified:=FALSE;
+    ChMemo.Lines.LoadfromFile(FN)
     end
   else
 end;
@@ -80,26 +81,26 @@ end;
 
 procedure TChngForm.BitBtn1Click(Sender: TObject);
 begin
-  if Memo1.Modified and (FN<>'')
+  if ChMemo.Modified and (FN<>'')
   then
     begin
-     Memo1.Lines.SaveToFile(FN);
+     ChMemo.Lines.SaveToFile(FN);
     end
 end;
 
 procedure TChngForm.Cut1Click(Sender: TObject);
 begin
-  Memo1.ClearSelection;
+  ChMemo.ClearSelection;
 end;
 
 procedure TChngForm.Copy1Click(Sender: TObject);
 begin
-  Memo1.CopyToClipBoard;
+  ChMemo.CopyToClipBoard;
 end;
 
 procedure TChngForm.Paste1Click(Sender: TObject);
 begin
-  Memo1.PasteFromClipboard
+  ChMemo.PasteFromClipboard
 end;
 
 procedure TChngForm.BitBtn3Click(Sender: TObject);
@@ -112,9 +113,9 @@ end;
 
 procedure TChngForm.ButtonDateClick(Sender: TObject);
 begin
-  Memo1.SetFocus;
-  Memo1.Seltext:=FormatDateTime('dddd "den" d mmmm yyyy, "kl." hh:mm', Now);
-  Memo1.SelLength:=0;
+  ChMemo.SetFocus;
+  ChMemo.Lines.Add(FormatDateTime('dddd "den" d mmmm yyyy, "kl." hh:mm', Now));
+  ChMemo.SelLength:=0;
 end;
 
 end.

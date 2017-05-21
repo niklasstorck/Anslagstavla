@@ -21,9 +21,12 @@
 
 // 1.9.0 Omkompilering pga problemet med felmedelande vid nätverksproblem.
 //
+
+// 2.0 Ny editor 2017-04-20
+//
 // ***************************************************************************
 // Niklas Storck
-// Hb Storckholmen 1994 - 2016
+// Hb Storckholmen 1994 - 2017
 // ***************************************************************************
 
 unit Start;
@@ -34,26 +37,29 @@ uses
   System.UITypes,
   SysUtils, WinTypes, WinProcs, Messages, Classes, Graphics, Controls,
   Forms, Dialogs, Menus, ExtCtrls, StdCtrls,
-  registry,inifiles ,about, ChTxt, Grids;
+  registry,inifiles ,about, ChTxt, Grids, AdvMemo, AdvmWS, FMX.TMSMemo,
+  FMX.TMSMemoStyles;
 (*
 Const c_Version = '1.8';
       c_Year = '1998';
       c_Copyright = 'Niklas Storck';*)
 type
   TStartForm = class(TForm)
-    Memo1: TMemo;
     PopupMenu1: TPopupMenu;
     Avsluta1: TMenuItem;
     OpenDialog1: TOpenDialog;
     SaveDialog1: TSaveDialog;
     Timer1: TTimer;
     ButtonKrymp: TButton;
-    N1: TMenuItem;
     Om1: TMenuItem;
-    ndraMedelande1: TMenuItem;
     Label1: TLabel;
     SPoppUpp1: TMenuItem;
     TrayIcon1: TTrayIcon;
+
+    AdvWebMemoStyler1: TAdvWebMemoStyler;
+    ndratexten1: TMenuItem;
+    N1: TMenuItem;
+    Memo1: TAdvMemo;
     procedure FormActivate(Sender: TObject);
     procedure Avsluta1Click(Sender: TObject);
     procedure ppnanyfil1Click(Sender: TObject);
@@ -61,16 +67,18 @@ type
     procedure Timer1Timer(Sender: TObject);
     procedure ButtonKrympClick(Sender: TObject);
     procedure Om1Click(Sender: TObject);
-    procedure ndraMedelande1Click(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure TaskIcon1Click(Sender: TObject);
     procedure Ingenram1Click(Sender: TObject);
     procedure SPoppUpp1Click(Sender: TObject);
+    procedure Memo1Change(Sender: TObject);
+    procedure ndratexten1Click(Sender: TObject);
     //procedure Timer2Timer(Sender: TObject);
 
   private
     // Private declarations
+    TextChanged: Boolean;
     FN        : String;     // Aktuellt filnamn
     FDate     : TdateTime;  // Sparat datum och tid på infofil
     FileOK    : Boolean;    //
@@ -197,7 +205,7 @@ begin
   Caption    := IniF.ReadString(  'SystemConfiguration', 'Caption', 'Kan inte läsa Global.ini!');
   PopUpTvingad:= IniF.ReadBool( 'SystemConfiguration', 'PopupTvingad', TRUE);
   MemoColor  := IniF.ReadInteger( 'SystemConfiguration', 'MemoColor',clNavy);
-  memo1.Color:=MemoColor;
+  memo1.BkColor:=MemoColor;
 
   Memo1.Font.Name  := IniF.ReadString(  'SystemConfiguration', 'MemoFontName', 'Arial');
   Memo1.Font.Color := IniF.ReadInteger( 'SystemConfiguration', 'MemoFontColor',clWhite);
@@ -214,7 +222,7 @@ begin
     Memo1.Font.Style:=Memo1.Font.Style-[fsItalic];
 
   IniF.Free;
-
+  TextChanged:=False;
 end;
 
 procedure TStartForm.OnScreen;
@@ -229,6 +237,8 @@ begin
   if height + top > Screen.height then top:=Screen.height-height;
   *)
 end;
+
+
 
 
 procedure TStartForm.MemoResize;
@@ -272,16 +282,19 @@ begin
   FDate:=0;
 
   if PopupTvingad then
-  begin
-    PopUpMenu1.Items[3].Visible:=False;
-    PopUpMenu1.Items[3].Enabled:= False;
-    if SPoppUpp1.Checked = true then
+    begin
+    SPoppUpp1.Visible:=False;
+    SPoppUpp1.Enabled:=False;
+
+    //PopUpMenu1.Items[2].Visible:=False;
+    //PopUpMenu1.Items[2].Enabled:= False;
+    if SPoppUpp1.Checked then
        SPoppUpp1.Checked:= False
-  end
+    end
   else
-  begin
-    PopUpMenu1.Items[3].Enabled:=TRUE
-  end;
+    begin
+    SPoppUpp1.Enabled:=TRUE
+    end;
   // ***************************************************************************
   // Om programmet startar med en parameter läser programmet in
   // den filen i stället
@@ -300,7 +313,8 @@ begin
     try
       FileOK:=TRUE;
       Memo1.Lines.LoadFromFile(FN);
-      FDate:=GetNewDate(FN);
+      //AdvMemo1.lines.LoadFromFile(FN);
+      FDate := GetNewDate(FN);
     except
       Fel(FN,'286' )
     end;
@@ -322,8 +336,8 @@ begin
    else  Memo1.Scrollbars:=ssNone;
 
   if Memo1.Lines[0]='OBS!'
-  then  Memo1.Color:=clRed
-  else Memo1.Color:=MemoColor;
+  then  Memo1.BkColor:=clRed
+  else Memo1.BkColor:=MemoColor;
 
   MemoResize;
   //CoolTrayIcon1.Enabled:=TRUE;
@@ -390,10 +404,10 @@ begin
          //else Memo1.Color:=clNavy;
           if Memo1.Lines[0]='OBS!' then
           begin
-            Memo1.Color:=clRed
+            Memo1.BkColor:=clRed
           end  else
           begin
-            Memo1.Color:=MemoColor
+            Memo1.BkColor:=MemoColor
           end;
 
 
@@ -411,13 +425,20 @@ begin
    Onscreen;
 end;
 
+procedure TStartForm.Memo1Change(Sender: TObject);
+begin
+ // TextChanged := true;
+ // Timer1.Interval:=5000; // spara var 5e sekund så länge det skrivs
+
+end;
 
 procedure TStartForm.Timer1Timer(Sender: TObject);
 
 begin
    FILEOK:=my_Repaint;
-
-   //OnScreen;
+  //if TextChanged then Memo1.Lines.SavetoFile(FN);
+   //TextChanged := false;
+   Timer1.Interval:=UppdatSek*1000; // Återställ timern till normalt
 end;
 
 procedure TStartForm.ButtonKrympClick(Sender: TObject);
@@ -434,7 +455,8 @@ begin
 end;
 
 
-procedure TStartForm.ndraMedelande1Click(Sender: TObject);
+
+procedure TStartForm.ndratexten1Click(Sender: TObject);
 begin
   if FileExists(FN) then
     begin
@@ -447,7 +469,6 @@ begin
       Application.Messagebox('Filen är inte tillgänglig just nu, försök lite senare.','OBS!',IDOK);
       Fel(FN,'420');
     end;
-
 end;
 
 procedure TStartForm.FormResize(Sender: TObject);
@@ -459,8 +480,8 @@ end;
 
 procedure TStartForm.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
+   Memo1.Lines.SavetoFile(FN);
    WriteSetup;
-   //DCMinTray.;
    Application.Terminate;
 end;
 

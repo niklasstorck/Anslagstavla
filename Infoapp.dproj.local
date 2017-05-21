@@ -2,5 +2,7 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>1899-12-30 00:00:00.000.189,C:\Bat\Netstart.bat=</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.980,=F:\Mina dokument\Niklas\GitHub\Anslagstavla\CHTXT.PAS</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.273,F:\Mina dokument\Niklas\GitHub\Anslagstavla\CHTXT.PAS=</Transaction>
   </Transactions>
 </BorlandProject>
